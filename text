@@ -1,2 +1,13 @@
 // Create a new user in the database...
 $user = User::create(array('name' => 'John'));
+
+$dataSet = [];
+foreach ($checkBox as $safety) {
+    $dataSet[] = [
+        'offer_id'  => $id,
+        'car_id'    => $safety,
+        'car'       => 15,
+    ];
+}
+
+DB::table('extra')->insert($dataSet);

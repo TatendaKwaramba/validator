@@ -16,4 +16,5 @@ Route::post('test', 'ImportsController@readCSV')->name('readCSV');
 Route::get('csv_results', 'ImportsController@show_results')->name('csv_results');
 Route::get('importExportView', 'ImportsController@importExportView');
 Route::post('import', 'ImportsController@import')->name('import');
+Route::get('export', 'ImportsController@export')->name('export');
 

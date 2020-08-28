@@ -71,16 +71,40 @@
 
 <body>
 
+    <div class="container">
+        <div class="card bg-light col-md-9 mt-3 ml-auto mr-auto">
+            <div class="card-header text-center">
+                Excel Data
+            </div>
+            <div class="card-body text-center">
+
     <form class="form-horizontal" method="POST" action="{{ route('import') }}">
         {{ csrf_field() }}
 
         <table class="table">
             @foreach ($csv_data as $row)
-                <tr>
-                    @foreach ($row as $key => $value)
-                        <td>{{ $value }}</td>
-                    @endforeach
-                </tr>
+                @if ($loop->first)
+                    <thead class="thead-dark">
+                        <tr>
+                            @foreach ($row as $key => $value)
+                                <th>{{ $value }}</th>
+                            @endforeach
+                        </tr>
+                    </thead>
+                @endif
+                @if ($row[3] == "Fail")
+                    <tr>
+                        @foreach ($row as $key => $value)
+                            <td class="alert alert-danger">{{ $value }}</td>
+                        @endforeach
+                    </tr>
+                @else ($row[3] == "Success")
+                    <tr>
+                        @foreach ($row as $key => $value)
+                            <td class="alert alert-success">{{ $value }}</td>
+                        @endforeach
+                    </tr>
+                @endif
             @endforeach
         </table>
 
@@ -91,6 +115,12 @@
             Go Back
         </a>
     </form>
+</div>
+</div>
+</div>
+
+</div>
+</div>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">

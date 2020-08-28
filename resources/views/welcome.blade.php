@@ -86,17 +86,17 @@
         @endif
 
         <div class="container">
-            <div class="card bg-light mt-3">
-                <div class="card-header">
+            <div class="card bg-light col-md-6 mt-3 ml-auto mr-auto">
+                <div class="card-header text-center">
                     Import Export Excel
                 </div>
-                <div class="card-body">
+                <div class="card-body text-center">
                     <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="file" accept=".csv" name="file" class="form-control">
                         <br>
                         <button class="btn btn-success">Import User Data</button>
-                        <a class="btn btn-warning" href="{{ route('import') }}">Export User Data</a>
+                        <a class="btn btn-warning" href="{{ route('export') }}">Download Template</a>
                     </form>
                 </div>
             </div>
