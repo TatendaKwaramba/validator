@@ -92,13 +92,13 @@
                         </tr>
                     </thead>
                 @endif
-                @if ($row[3] == "Fail")
+                @if ($row[7] == "FAIL")
                     <tr>
                         @foreach ($row as $key => $value)
                             <td class="alert alert-danger">{{ $value }}</td>
                         @endforeach
                     </tr>
-                @else ($row[3] == "Success")
+                @else
                     <tr>
                         @foreach ($row as $key => $value)
                             <td class="alert alert-success">{{ $value }}</td>
