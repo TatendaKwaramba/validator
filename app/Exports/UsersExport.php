@@ -19,10 +19,14 @@ class UsersExport implements FromCollection, WithHeadings
     public function headings(): array
     {
         return [
-            'name',
+            'mobile',
+            'firstname',
+            'lastname',
+            'state',
+            'address',
             'email',
-            'password',
-            'status',
+            'deposit',
+            'status'
         ];
     }
 }

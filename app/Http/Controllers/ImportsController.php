@@ -23,7 +23,7 @@ class ImportsController extends Controller
     */
     public function export() 
     {
-        return Excel::download(new UsersExport, 'users.xlsx');
+        return Excel::download(new UsersExport, 'users.csv');
     }
    
     /**
@@ -72,7 +72,7 @@ class ImportsController extends Controller
 
     // Validatio Functions
     public function valid_mobile($mobile){
-        if(!$mobile || !(preg_match('/^[0-9]+$/', $mobile))){
+        if(!$mobile || !(preg_match('/^[0-9]{9,12}+$/', $mobile))){
             return FALSE;
         }else{
             return TRUE;

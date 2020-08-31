@@ -72,9 +72,9 @@
 <body>
 
     <div class="container">
-        <div class="card bg-light col-md-9 mt-3 ml-auto mr-auto">
+        <div class="card bg-light col-md-12 mt-3 ml-auto mr-auto">
             <div class="card-header text-center">
-                Excel Data
+                CSV Data
             </div>
             <div class="card-body text-center">
 
@@ -91,6 +91,9 @@
                             @endforeach
                         </tr>
                     </thead>
+                @endif
+                @if ($row[7] == "status")
+                    @continue
                 @endif
                 @if ($row[7] == "FAIL")
                     <tr>

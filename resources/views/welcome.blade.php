@@ -88,7 +88,7 @@
         <div class="container">
             <div class="card bg-light col-md-6 mt-3 ml-auto mr-auto">
                 <div class="card-header text-center">
-                    Import Export Excel
+                    Import CSV 
                 </div>
                 <div class="card-body text-center">
                     <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
